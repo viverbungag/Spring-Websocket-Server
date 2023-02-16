@@ -6,12 +6,14 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
+import java.util.Map;
+
 @Controller
 public class WebSocketTextController {
 
     @MessageMapping("/message")
     @SendTo("/msg/input")
-    private String receiveText(@Payload String message){
-        return message;
+    private Map<Object, Object> receiveText(@Payload Map<Object, Object> textMessageDTO){
+        return textMessageDTO;
     }
 }

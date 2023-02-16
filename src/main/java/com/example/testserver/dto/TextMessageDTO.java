@@ -1,17 +1,15 @@
 package com.example.testserver.dto;
 
+import lombok.*;
+
+import java.util.Map;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class TextMessageDTO {
-    private String message;
-
-    public TextMessageDTO(String message) {
-        this.message = message;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    private String newValue;
+    private String type;
 }
